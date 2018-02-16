@@ -10,9 +10,9 @@ SCC <- readRDS("Source_Classification_Code.rds")
 library(ggplot2)
 
 
-table(SCC$EI.Sector)
-str(SCC$EI.Sector)
-levels(SCC$EI.Sector)
+# table(SCC$EI.Sector)
+# str(SCC$EI.Sector)
+# levels(SCC$EI.Sector)
 casosconcoal <- grepl("coal", SCC$EI.Sector, ignore.case = TRUE)
 SCCCoal <- SCC[casosconcoal,] # casos con coal
 # Merge datasets to add year
@@ -30,4 +30,4 @@ g <- g + labs(title= "emissions from coal combustion-related sources from 1999â€
 g <- g + geom_point() 
 g
 dev.off()
-
+# rm(g)
